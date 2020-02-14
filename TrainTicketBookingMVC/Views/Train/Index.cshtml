@@ -1,0 +1,45 @@
+﻿@model TrainTicketBookingMVC.Entity.Train
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    @foreach(TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)ViewData["Details"])
+    {
+        <tr>
+            <td>
+                @item.TrainNo
+            </td>
+            <td>
+                @item.TrainName
+            </td>
+        </tr>
+    }
+
+    @foreach (TrainTicketBookingMVC.Entity.Train item in ViewBag.details)
+    {
+        <tr>
+            <td>
+                @item.TrainNo
+            </td>
+            <td>
+                @item.TrainName
+            </td>
+        </tr>
+    }
+
+    @foreach (TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)TempData["Details"])
+    {
+        <tr>
+            <td>
+                @item.TrainNo
+            </td>
+            <td>
+                @item.TrainName
+            </td>
+        </tr>
+    }
+</table>
