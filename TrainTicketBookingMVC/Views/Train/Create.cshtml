@@ -1,0 +1,34 @@
+﻿@model TrainTicketBookingMVC.Entity.Train
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Train", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("TrainNo")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.TrainNo)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.TrainName)</td>
+            <td>@Html.EditorFor(Model => Model.TrainName)</td>
+        </tr>        
+        <tr>
+            <td>
+                @Html.ActionLink("Back to list", "Index")
+            </td>
+            <td>
+                <input type="submit" id="Add" />
+            </td>
+        </tr>
+    </table>
+}
+

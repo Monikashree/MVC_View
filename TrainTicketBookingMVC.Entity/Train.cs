@@ -10,5 +10,15 @@ namespace TrainTicketBookingMVC.Entity
     {
         public int TrainNo { get; set; }
         public string TrainName { get; set; }
+        public Train(int TrainNo, string TrainName)
+        {
+            TrainNo = this.TrainNo;
+            TrainName = this.TrainName;
+        }
+        public Train()
+        {
+
+        }
     }
+    
 }
