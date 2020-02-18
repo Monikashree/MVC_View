@@ -64,7 +64,7 @@ namespace TrainTicketBookingMVC.Controllers
             //}
             //return View(packageDetails);
         }
-        //public ActionResult Create_Post()
+        //public ActionResult Create_Post()         Tryupdate model....
         //{
         //    // if(ModelState.IsValid)
         //    //{
