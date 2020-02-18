@@ -45,21 +45,37 @@ namespace TrainTicketBookingMVC.Controllers
         //    return View();
         //}
         [HttpGet]
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult Create_Get()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Train train)
+        [ActionName("Create")]
+        public ActionResult Create_Post()
         {
             // if(ModelState.IsValid)
             //{
+            Train train = new Train();
+            UpdateModel<Train>(train);
             trainRepository.AddDetails(train);
             TempData["Details"] = "Details added";
             return RedirectToAction("Index");
             //}
             //return View(packageDetails);
         }
+        //public ActionResult Create_Post()
+        //{
+        //    // if(ModelState.IsValid)
+        //    //{
+        //    Train train = new Train();
+        //    TryUpdateModel<Train>(train);
+        //    trainRepository.AddDetails(train);
+        //    TempData["Details"] = "Details added";
+        //    return RedirectToAction("Index");
+        //    //}
+        //    //return View(packageDetails);
+        //}
         public ActionResult Edit(int id)
         {
             Train trains = trainRepository.GetDetailsById(id);
@@ -82,5 +98,6 @@ namespace TrainTicketBookingMVC.Controllers
             //}
             //return View("Edit",packageDetails);
         }
+
     }
 }

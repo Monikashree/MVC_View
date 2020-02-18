@@ -1,24 +1,29 @@
 ﻿@model  IEnumerable <TrainTicketBookingMVC.Entity.Train>
 
 @{
-    ViewBag.Title = "Train";
+    ViewBag.Title = "Index";
 }
-
+<br/>
 @Html.ActionLink("Create New Details", "Create")<br />
 
-@if (TempData["details"] != null)
+@*@if (TempData["details"] != null)
 {
     @Html.Label((string)TempData["details"])
-}
+}*@
 <h2>Train</h2>
 
 <table border="1">
     <tr>
-        <td>Train Name</td>        
+        <td>Train No</td>
+        <td>Train Name</td> 
+        <td>Choice</td>        
     </tr>
-    @foreach (TrainTicketBookingMVC.Entity.Train item in @Model)
+    @foreach (TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>) TempData["details"])
     {
         <tr>
+            <td>
+                @item.TrainNo
+            </td>
             <td>
                 @item.TrainName
             </td>
@@ -29,7 +34,7 @@
             </td>
         </tr>
     }
-    @foreach(TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)ViewData["Details"])
+    @*@foreach(TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)ViewData["Details"])
     {
         <tr>
             <td>
@@ -39,9 +44,9 @@
                 @item.TrainName
             </td>
         </tr>
-    }
+    }*@
 
-    @foreach (TrainTicketBookingMVC.Entity.Train item in ViewBag.details)
+    @*@foreach (TrainTicketBookingMVC.Entity.Train item in ViewBag.details)
     {
         <tr>
             <td>
@@ -51,9 +56,9 @@
                 @item.TrainName
             </td>
         </tr>
-    }
+    }*@
 
-    @foreach (TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)TempData["Details"])
+    @*@foreach (TrainTicketBookingMVC.Entity.Train item in (IEnumerable<TrainTicketBookingMVC.Entity.Train>)TempData["Details"])
     {
         <tr>
             <td>
@@ -63,7 +68,7 @@
                 @item.TrainName
             </td>
         </tr>
-    }
+    }*@
 
 
 </table>
